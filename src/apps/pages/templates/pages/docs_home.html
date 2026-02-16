@@ -1,0 +1,37 @@
+{% extends "pages/base.html" %}
+{% load crispy_forms_tags %}
+
+
+<!-- Django Crispy Forms example: https://gist.github.com/maraujop/1838193 -->
+
+
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Post Content Column -->
+    <div class="col-md-12">
+
+        <!-- Title -->
+        <h1 class="mt-3">Documentation</h1>
+
+        <!-- Subtitle -->
+        <h3 class="mt-4 mb-5">Experimental Form</h3>
+
+        <div id="experimental-form">
+            {% crispy experimental_form %}
+        </div>
+
+    </div>
+
+</div>
+<!-- End of Page Content -->
+
+
+{% endblock %}
+

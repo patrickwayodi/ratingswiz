@@ -1,0 +1,11 @@
+/*
+ * Do not use <br> to create margins between paragraphs; wrap them in <p> elements and 
+ * use the "CSS margin" property to control their size.
+ */
+
+
+/*
+:root {
+  --bs-body-bg: var(--bs-gray-100);
+}
+ */

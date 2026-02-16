@@ -1,0 +1,108 @@
+{% load static %}
+
+<!-- https://getbootstrap.com/docs/5.3/components/navbar -->
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+    <div class="container-fluid">
+
+        <a class="navbar-brand pe-4" href="{% url 'site_home' %}">Ratingswiz</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse ps-5" id="site-navbar">
+
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="" data-bs-toggle="dropdown">
+                        Charts
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'fed_top_20_players' fed='KEN' date='2026-02-01' %}">Top 10 Players in Kenya</a></li>
+                        <li><a class="dropdown-item" href="">All Rated Players in Africa</a></li>
+                        <li><a class="dropdown-item" href="">All Rated Players in Kenya</a></li>
+                        <li><a class="dropdown-item" href="">Fastest Rising Players</a></li>
+                        <li><a class="dropdown-item" href="">Progress of Players in Kenya</a></li>
+                        <li><a class="dropdown-item" href="">Top 400 Players</a></li>
+                     </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="" data-bs-toggle="dropdown">
+                        Rating Lists
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'create_post' %}">Upload Rating List</a></li>
+                        <li><a class="dropdown-item" href="{% url 'post_list' %}">View Uploads</a></li>
+                        <li><a class="dropdown-item" href="{% url 'rating_list_list' %}">View Rating Lists</a></li>
+
+                        <li><a class="dropdown-item" href="">Search Rating Lists</a></li>
+                     </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="" data-bs-toggle="dropdown">
+                        Players
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'player_profile_list' %}">Player Profiles</a></li>
+                        <li><a class="dropdown-item" href="">Search Players</a></li>
+                     </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="{% url 'site_home' %}" data-bs-toggle="dropdown">
+                        Federations
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'federation_list' %}">View Federations</a></li>
+                        <li><a class="dropdown-item" href="">Search Federations</a></li>
+                     </ul>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="" data-bs-toggle="dropdown">
+                        Settings
+                    </a>
+                    <ul class="dropdown-menu">
+                        {% if user.is_authenticated %}
+                            <li>
+                                <a class="dropdown-item" href="">
+                                    Account ({{ user.username }})
+                                </a>
+                            </li>
+                        {% endif %}
+                        <li><a class="dropdown-item" href="">Theme</a></li>
+                        <li><a class="dropdown-item" href="">Storage</a></li>
+                        <li><a class="dropdown-item" href="">Speed</a></li>
+                        {% if user.is_authenticated %}
+                            <li>
+                                <a class="dropdown-item" href="{% url 'account_logout' %}">
+                                    Log Out ({{ user.username }})
+                                </a>
+                            </li>
+                        {% else %}
+                            <li>
+                                <a class="dropdown-item" href="{% url 'account_login' %}">Log In</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+

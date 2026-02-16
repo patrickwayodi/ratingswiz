@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+
+<!-- <html lang="en"> -->
+<html lang="en" data-bs-theme="dark">
+
+{% include "pages/head.html" %}
+
+
+<!-- <body class="bg-light"> -->
+<body>
+
+
+    {% include "pages/navbar.html" %}
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+    {% include "pages/footer.html" %}
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'pages/js/bootstrap-5.3.3.bundle.min.js' %}"></script>
+
+</body>
+
+
+</html>
+
