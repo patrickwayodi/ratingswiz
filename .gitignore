@@ -1,5 +1,76 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+*.py[cod]
+*$py.class
+
+
+# Django
+*.log
+db.sqlite3
+media
+
+
+# Virtual environment
+.venv
+*venv
+
+
+# Screencast
+Lithium_Demo_2025.mp4
+
+
+# OSX #
+.DS_Store
+
+
+# Backup files #
+
+*.2024-*
+*.2025-*
+*.2026-*
+
+
+# Example files #
+
+*-example*
+*-examples*
+
+
+# Ignore test files
+*.pgn
+*.epd
+*.bat
+*.exe
+*.log
+
+
+# Ignore files inside the dirs created by setup.py
+build/*
+dist/*
+
+
+# Ignore files inside tools, output, pgn and epd dirs
+Pgn/*
+Epd/*
+Tools/*
+Output/*
+
+
+# Ignore opening books such as cerebellum and polyglot
+*.bin
+
+
+# Ignore text files, except README.txt
+*.txt
+!README.txt
+
+
+# Pycharm
+*.idea
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
 *.py[codz]
 *$py.class
 
