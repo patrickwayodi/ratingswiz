@@ -1,0 +1,44 @@
+# Production
+# ------------------------------------------------------------------------------
+
+crispy-bootstrap5
+defusedxml
+Django==5.2.9
+django-allauth
+django-celery
+django-celery-beat
+django-celery-results
+django-crispy-forms
+django-environ
+django-rest-auth
+django-widget-tweaks
+gunicorn
+matplotlib
+pillow
+psycopg
+reportlab
+requests
+requests-oauthlib
+whitenoise
+
+
+# Local
+# ------------------------------------------------------------------------------
+
+django-debug-toolbar
+watchdog
+
+
+# Testing
+# ------------------------------------------------------------------------------
+
+pytest
+
+
+# Code quality
+# ------------------------------------------------------------------------------
+
+flake8
+pylint
+pylint-django
+
