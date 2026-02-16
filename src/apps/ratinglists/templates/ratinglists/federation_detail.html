@@ -1,0 +1,54 @@
+{% extends "ratinglists/base.html" %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+    <h1 class="mt-4 pb-4">Federation Profile</h1>
+
+    <div>
+        Name: {{ fed_profile.name }}
+    </div>
+
+    <br />
+
+    <div>
+        Rating Date: {{ fed_profile.date }}
+    </div>
+
+    <br />
+
+    <div>
+        Players: {{ fed_profile.total_players }}
+    </div>
+
+    <br />
+
+    <ul class="list-group list-group">
+
+        {% for federation_profile in federation_profiles %}
+        <li class="list-group-item list-group-item-light">
+            <div class="text-wrap text-break">
+                <div class="row">
+                    <div class="col text-truncate">
+                        {% url 'federation_profiles_detail' federation as federation_url %}
+                        <a href="{{ federation_url }}">{{ federation_profile.rating_date|date:"F Y" }}</a>
+                    </div>
+                    <div class="col text-truncate">Players: {{ federation_profile.player_total }}</div>
+                </div>
+
+
+            </div>
+        </li>
+        {% endfor %}
+
+    </ul>
+
+</div>
+<!-- /.container -->
+
+
+{% endblock %}
+

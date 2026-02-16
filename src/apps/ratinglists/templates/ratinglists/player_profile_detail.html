@@ -1,0 +1,83 @@
+{% extends "ratinglists/base.html" %}
+{% load humanize %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+    <div>
+        <h1 class="mt-4 pb-4">Player Profile</h1>
+    </div>
+
+    <br />
+
+    <div>
+        Name: {{ player_profile.name }}
+    </div>
+
+    <br />
+
+    <div>
+        Rating: {{ player_profile.rating }}
+    </div>
+
+    <br />
+
+    <div>
+        Rating Date: {{ player_profile.rating_date|date:"F Y" }}
+    </div>
+
+    <br />
+
+    <div>
+        Federation: {{ player_profile.country }}
+    </div>
+
+    <br />
+
+    <div>
+        Birthday: {{ player_profile.birthday }}
+    </div>
+
+    <br />
+
+    <div>
+        Gender: {{ player_profile.sex }}
+    </div>
+
+    <br />
+
+    <div>
+        Games: {{ player_profile.games }}
+    </div>
+
+    <br />
+
+    <div>
+        FIDE ID: {{ player_profile.fideid }}
+    </div>
+
+    <br />
+
+    <div>
+        Index: {{ player_profile.index|intcomma }}
+    </div>
+
+    <br />
+    <br />
+
+    <div>
+        Uploaded: {{ player_profile.date_created }} (UTC)
+    </div>
+
+    <br />
+    <br />
+
+</div>
+<!-- /.container -->
+
+
+{% endblock %}
+

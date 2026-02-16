@@ -1,0 +1,34 @@
+{% extends "ratinglists/base.html" %}
+{% load humanize %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+    <div>
+        <h1 class="mt-4 pb-4">The rating list has been uploaded</h1>
+    </div>
+
+    <div>
+        <!-- https://docs.djangoproject.com/en/5.2/ref/templates/builtins/#date -->
+        Rating List Date: {{ release_date }}
+    </div>
+
+    <br />
+
+
+    <div id="get-details">
+        <a href="{% url 'rating_list_detail' slug=release_date %}">Create the Player Profiles</a>
+    </div>
+
+    <br />
+    <br />
+
+</div>
+<!-- /.container -->
+
+
+{% endblock %}
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+<html lang="en" data-bs-theme="dark">
+
+
+{% include "ratinglists/head.html" %}
+
+
+<body>
+
+
+    {% include "ratinglists/navbar.html" %}
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+    {% include "ratinglists/footer.html" %}
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'ratinglists/js/bootstrap-5.3.3.bundle.min.js' %}"></script>
+
+</body>
+
+
+</html>

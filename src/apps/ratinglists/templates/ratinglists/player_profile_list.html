@@ -1,0 +1,48 @@
+{% extends "ratinglists/base.html" %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+    <h1 class="mt-4 pb-4">Player Profiles</h1>
+
+    <ul class="list-group list-group-numbered">
+
+        {% for player_profile in player_profiles %}
+        <li class="list-group-item list-group-item-light">
+            <div class="text-wrap text-break">
+                <div class="row">
+                    <div class="col text-truncate">
+                        <a href="{{ player_profile.get_absolute_url }}">{{ player_profile.name }}</a>
+                    </div>
+                    <div class="col text-truncate">
+                        <a href="{{ player_profile.get_absolute_url }}">{{ player_profile.rating }}</a>
+                    </div>
+                    <div class="col text-truncate">Uploaded: {{ player_profile.date_created }}</div>
+                </div>
+                <div class="row">
+                    <div class="col text-truncate text-bg-primary text-center">
+                        <a href="{{ player_profile.get_absolute_url }}" class="text-reset text-decoration-none">
+                            View
+                        </a>
+                    </div>
+                    <div class="col text-truncate text-bg-primary text-center">
+                        <a href="" class="text-reset text-decoration-none">
+                            Share
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+
+    </ul>
+
+</div>
+<!-- /.container -->
+
+
+{% endblock %}
+

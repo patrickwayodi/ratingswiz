@@ -1,0 +1,95 @@
+{% extends "ratinglists/base.html" %}
+{% load humanize %}
+
+
+{% block content %}
+
+
+
+<div class="container">
+
+    <h1 class="mt-4 pb-4">Rating List</h1>
+
+</div>
+
+
+<div class="container">
+
+    <div>
+        File Name: {{ rating_list.original_file_name }}
+    </div>
+
+    <br />
+
+    <div>
+        <!-- https://docs.djangoproject.com/en/5.2/ref/templates/builtins/#date -->
+        Release Date: {{ rating_list.release_date|date:"F Y" }}
+    </div>
+
+    <br />
+
+    <div>
+        Players: {{ rating_list.player_total|intcomma }}
+    </div>
+
+    <br />
+
+    <div>
+        Uploader: {{ rating_list.owner }}
+    </div>
+
+    <br />
+
+    <div>
+        Uploaded: {{ rating_list.date_uploaded }} (UTC)
+    </div>
+
+    <br />
+</div>
+
+
+<div class="container">
+    <div>
+        <h2 class="mt-4 pb-4">Federation Profiles</h1>
+    </div>
+    <ul class="list-group">
+        {% for federation in federations %}
+            <li class="list-group-item list-group-item-light">
+                <div class="text-wrap text-break">
+                    <a href="{% url 'federation_detail' fed=federation.1 date=rating_date %}">
+                        {{ federation.0 }}
+                    </a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<br />
+
+<div class="container">
+    <div>
+        <h2 class="mt-4 pb-4">Region Profiles</h1>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-light">
+            <div class="text-wrap text-break">
+                <a href="{% url 'region_detail' name='africa' %}">Africa</a>
+            </div>
+        </li>
+        <li class="list-group-item list-group-item-light">
+            <div class="text-wrap text-break">
+                <a href="{% url 'region_detail' name='eastafrica' %}">East Africa</a>
+            </div>
+        </li>
+        <li class="list-group-item list-group-item-light">
+            <div class="text-wrap text-break">
+                <a href="{% url 'region_detail' name='europe' %}">Europe</a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+{% endblock %}
+

@@ -1,0 +1,319 @@
+{% extends "ratinglists/base.html" %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+    <h2 class="mt-4 pb-4 pt-3">Top 10 Chess Players in Kenya ({{ rating_date|date:"F Y" }})</h2>
+
+    <div>
+        <div class="row">
+            <div class="col pb-3">
+                <h4>Overall</h4>
+                {% for player in all_players %}
+                    <div class="row">
+                        <div class="col text-truncate">
+                            {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col pb-3">
+                <h4>Dinosaurs</h4>
+                {% for player in veterans %}
+                    <div class="row">
+                        <div class="col text-truncate">
+                            {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col pb-3">
+                <h4>Youngbloods</h4>
+                {% for player in youngbloods %}
+                    <div class="row">
+                        <div class="col text-truncate">
+                            {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col pb-3">
+            </div>
+            <div class="col pb-3">
+            </div>
+            <div class="col pb-3">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col pb-3">
+                <h4>Ladies</h4>
+                {% for player in ladies %}
+                    <div class="row">
+                        <div class="col text-truncate">
+                            {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col pb-3">
+                <h4>Juniors - Boys</h4>
+                {% for player in junior_boys %}
+                    <div class="row">
+                        <div class="col text-truncate">
+                            {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col pb-3">
+                <h4>Juniors - Girls</h4>
+                {% for player in junior_girls %}
+                    <div class="row">
+                        <div class="col text-truncate">
+                            {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col pb-3">
+            </div>
+            <div class="col pb-3">
+            </div>
+            <div class="col pb-3">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col pb-3">
+                <h4>Under-12 Girls</h4>
+                {% for player in under_12_girls %}
+                    <div class="row">
+                        <div class="col text-truncate">
+                            {{ player.rating }} &nbsp; {{ player.name|truncatechars:19 }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col pb-3">
+                <h4>Under-12 Boys</h4>
+                {% for player in under_12_boys %}
+                    <div class="row">
+                        <div class="col text-truncate">
+                            {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col pb-3">
+                <h4>Under-8</h4>
+                {% for player in under_8 %}
+                    <div class="row">
+                        <div class="col text-truncate">
+                            {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col pb-3">
+            </div>
+            <div class="col pb-3">
+            </div>
+            <div class="col pb-3">
+            </div>
+        </div>
+    </div>
+
+
+    <h2 class="mt-4 pb-3 pt-4">
+        Top Chess Players in Kenya By Decade of Birth <br />
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        ({{ rating_date|date:"F Y" }})
+    </h2>
+
+    <div>
+        <div class="row">
+            <div class="col pb-3">
+                <h4 class="text-center">2010s</h4>
+                {% for player in top_2010s %}
+                    <div class="row">
+                        {% if player.sex == "F" %}
+                            <div class="col text-truncate text-primary">
+                                {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                            </div>
+                        {% else %}
+                            <div class="col text-truncate">
+                                {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col pb-3">
+                <h4 class="text-center">2000s</h4>
+                {% for player in top_2000s %}
+                    <div class="row">
+                        {% if player.sex == "F" %}
+                            <div class="col text-truncate text-primary">
+                                {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                            </div>
+                        {% else %}
+                            <div class="col text-truncate">
+                                {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col pb-3">
+                <h4 class="text-center">1990s</h4>
+                {% for player in top_1990s %}
+                    <div class="row">
+                        {% if player.sex == "F" %}
+                            <div class="col text-truncate text-primary">
+                                {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                            </div>
+                        {% else %}
+                            <div class="col text-truncate">
+                                {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col pb-3">
+            </div>
+            <div class="col pb-3">
+            </div>
+            <div class="col pb-3">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col pb-3">
+                <h4 class="text-center">1980s</h4>
+                {% for player in top_1980s %}
+                    <div class="row">
+                        {% if player.sex == "F" %}
+                            <div class="col text-truncate text-primary">
+                                {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                            </div>
+                        {% else %}
+                            <div class="col text-truncate">
+                                {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col pb-3">
+                <h4 class="text-center">1970s</h4>
+                {% for player in top_1970s %}
+                    <div class="row">
+                        {% if player.sex == "F" %}
+                            <div class="col text-truncate text-primary">
+                                {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                            </div>
+                        {% else %}
+                            <div class="col text-truncate">
+                                {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col pb-3">
+                <h4 class="text-center">1960s</h4>
+                {% for player in top_1960s %}
+                    <div class="row">
+                        {% if player.sex == "F" %}
+                            <div class="col text-truncate text-primary">
+                                {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                            </div>
+                        {% else %}
+                            <div class="col text-truncate">
+                                {{ player.rating }} &nbsp; {{ player.name|truncatechars:20 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col pb-3">
+            </div>
+            <div class="col pb-3">
+            </div>
+            <div class="col pb-3">
+            </div>
+        </div>
+    </div>
+
+
+    <h4 class="mt-4 pb-4 pt-5">Veterans</h4>
+
+    <ul class="list-group list-group">
+        {% for player in veterans %}
+        <li class="list-group-item list-group-item-light">
+            <div class="text-wrap text-break">
+                <div class="row">
+                    <div class="col text-truncate">
+                        <a href="{{ player.get_absolute_url }}">{{ player }}</a>
+                    </div>
+                    <div class="col text-truncate">
+                        <a href="{{ player.get_absolute_url }}">{{ player.rating }}</a>
+                    </div>
+                    <div class="col text-truncate">{{ player.birthday }}</div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+    <h4 class="mt-4 pb-4">Youngbloods</h4>
+
+    <ul class="list-group list-group">
+        {% for player in youngbloods %}
+        <li class="list-group-item list-group-item-light">
+            <div class="text-wrap text-break">
+                <div class="row">
+                    <div class="col text-truncate">
+                        <a href="{{ player.get_absolute_url }}">{{ player }}</a>
+                    </div>
+                    <div class="col text-truncate">
+                        <a href="{{ player.get_absolute_url }}">{{ player.rating }}</a>
+                    </div>
+                    <div class="col text-truncate">{{ player.birthday }}</div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+    <h4 class="mt-4 pb-4">Overall</h4>
+
+    <ul class="list-group list-group">
+        {% for player in all_players %}
+        <li class="list-group-item list-group-item-light">
+            <div class="text-wrap text-break">
+                <div class="row">
+                    <div class="col text-truncate">
+                        <a href="{{ player.get_absolute_url }}">{{ player }}</a>
+                    </div>
+                    <div class="col text-truncate">
+                        <a href="{{ player.get_absolute_url }}">{{ player.rating }}</a>
+                    </div>
+                    <div class="col text-truncate">{{ player.birthday }}</div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+</div>
+<!-- /.container -->
+
+
+{% endblock %}
+

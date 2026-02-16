@@ -1,0 +1,28 @@
+{% extends "ratinglists/base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+    <div class="col-md-12 py-3">
+        <!-- Title -->
+        <h1 class="mt-1">Error: Rating List Has Player Profiles</h1>
+    </div>
+
+    <div class="col-md-12 py-2">
+        The <a href="{{ post.get_absolute_url }}">uploaded file</a> has already been
+        processed.
+    </div>
+
+    <br />
+    <br />
+
+</div>
+<!-- End of Page Content -->
+
+
+{% endblock %}
+

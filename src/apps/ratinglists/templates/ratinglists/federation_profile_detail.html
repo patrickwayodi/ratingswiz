@@ -1,0 +1,45 @@
+{% extends "ratinglists/base.html" %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+    <div>
+        <h1 class="mt-4 pb-4">Federation Profile</h1>
+    </div>
+
+    <br />
+
+    <div>
+        Federation: {{ federation_profile.federation_code }}
+    </div>
+
+    <br />
+
+    <div>
+        Rating Date: {{ federation_profile.rating_date|date:"F Y" }}
+    </div>
+
+    <br />
+
+    <div>
+        Total Players: {{ federation_profile.player_total }}
+    </div>
+
+    <br />
+
+    <div>
+        Uploaded: {{ federation_profile.date_uploaded }} (UTC)
+    </div>
+
+    <br />
+    <br />
+
+</div>
+<!-- /.container -->
+
+
+{% endblock %}
+

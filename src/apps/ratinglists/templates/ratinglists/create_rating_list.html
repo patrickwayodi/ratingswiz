@@ -1,0 +1,29 @@
+{% extends "ratinglists/base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}Upload Rating List | Ratingswiz{% endblock %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+    <div class="col-md-12 py-5">
+        <h1 class="mt-3">Player Profiles Created</h1>
+    </div>
+
+    <div id="create-video-request-form" class="col-md-12 py-3">
+        The <a href="{{ post.get_absolute_url }}">uploaded file</a> has been processed.
+    </div>
+
+    <br />
+    <br />
+
+</div>
+<!-- End of Page Content -->
+
+
+{% endblock %}
+

@@ -1,0 +1,20 @@
+/*
+ * Do not use <br> to create margins between paragraphs; wrap them in <p> elements and
+ * use the "CSS margin" property to control their size.
+ */
+
+
+/*
+:root {
+  --bs-body-bg: var(--bs-gray-100);
+}
+ */
+
+
+/* Remove the asterisk from the "Required" fields in django-scrispy-forms.
+ * https://django-crispy-forms.readthedocs.io/en/2.3/crispy_tag_forms.html#change-required-fields
+ */
+.asteriskField {
+    display: none;
+}
+

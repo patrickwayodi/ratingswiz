@@ -1,0 +1,34 @@
+{% extends "ratinglists/base.html" %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+    <h1 class="mt-4 pb-4">Federations</h1>
+
+    <ul class="list-group list-group">
+
+        {% for federation in federations %}
+        <li class="list-group-item list-group-item-light">
+            <div class="text-wrap text-break">
+                <div class="row">
+                    <div class="col text-truncate">
+                        {% url 'federation_detail' federation.1 as federation_url %}
+                        <a href="{{ federation_url }}">{{ federation.0 }}</a>
+                    </div>
+                    <div class="col text-truncate">Code: {{ federation.1 }}</div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+
+    </ul>
+
+</div>
+<!-- /.container -->
+
+
+{% endblock %}
+

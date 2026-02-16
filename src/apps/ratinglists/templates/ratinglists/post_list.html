@@ -1,0 +1,46 @@
+{% extends "ratinglists/base.html" %}
+
+
+{% block content %}
+
+
+<!-- container -->
+<div class="container">
+
+    <h1 class="mt-4 pb-4">Rating Lists</h1>
+
+    <ul class="list-group list-group-numbered">
+
+        {% for post in posts %}
+            <li class="list-group-item list-group-item-light">
+                <div class="text-wrap text-break">
+                    <div class="row">
+                        <div class="col text-truncate">
+                            <a href="{{ post.get_absolute_url }}">{{ post }}</a>
+                        </div>
+                        <div class="col text-truncate">Uploaded: {{ post.date_uploaded }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-truncate text-bg-primary text-center">
+                            <a href="{{ post.get_absolute_url }}" class="text-reset text-decoration-none">
+                                View
+                            </a>
+                        </div>
+                        <div class="col text-truncate text-bg-primary text-center">
+                            <a href="" class="text-reset text-decoration-none">
+                                Share
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+
+    </ul>
+
+</div>
+<!-- /.container -->
+
+
+{% endblock %}
+

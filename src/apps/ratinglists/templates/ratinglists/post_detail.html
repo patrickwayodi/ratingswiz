@@ -1,0 +1,59 @@
+{% extends "ratinglists/base.html" %}
+{% load humanize %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+    <div>
+        <h1 class="mt-4 pb-4">Uploaded File</h1>
+    </div>
+
+    <div>
+        File Name: {{ post.uploaded_file }}
+    </div>
+
+    <br />
+
+    <div>
+        Unzipped File Name: {{ post.unzipped_file_name }}
+    </div>
+
+    <br />
+
+    <div>
+        Uploader: {{ post.owner }}
+    </div>
+
+    <br />
+
+    <div>
+        Uploaded: {{ post.date_uploaded }} (UTC)
+    </div>
+
+    <br />
+
+    <div id="create-profiles">
+        <a href="{% url 'create_rating_list' pk=post.id %}">Create Player Profiles</a>
+    </div>
+
+    <br />
+
+    {% if post.is_extracted %}
+        <script>
+            document.getElementById("create-profiles").innerText = "";
+        </script>
+        <br />
+    {% endif %}
+
+    <br />
+    <br />
+
+</div>
+<!-- /.container -->
+
+
+{% endblock %}
+

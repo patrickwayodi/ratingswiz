@@ -1,0 +1,29 @@
+{% extends "ratinglists/base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+    <div class="col-md-12 py-3">
+        <!-- Title -->
+        <h1 class="mt-1">Create Player Profiles</h1>
+    </div>
+
+    <div class="col-md-12 py-2">
+        The player profiles for the
+        <a href="{{ rating_list.get_absolute_url }}">{{ release_date }} rating list</a>
+        have been created.
+    </div>
+
+    <br />
+    <br />
+
+</div>
+<!-- End of Page Content -->
+
+
+{% endblock %}
+

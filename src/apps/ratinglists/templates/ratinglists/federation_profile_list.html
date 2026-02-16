@@ -1,0 +1,48 @@
+{% extends "ratinglists/base.html" %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+    <h1 class="mt-4 pb-4">Federation Profiles</h1>
+
+    <ul class="list-group list-group-numbered">
+
+        {% for federation_profile in federation_profiles %}
+        <li class="list-group-item list-group-item-light">
+            <div class="text-wrap text-break">
+                <div class="row">
+                    <div class="col text-truncate">
+                        <a href="{{ federation_profile.get_absolute_url }}">{{ federation_profile.federation_code }}</a>
+                    </div>
+                    <div class="col text-truncate">
+                        <a href="{{ federation_profile.get_absolute_url }}">{{ federation_profile.rating_date|date:"F Y" }}</a>
+                    </div>
+                    <div class="col text-truncate">Uploaded: {{ federation_profile.date_uploaded }}</div>
+                </div>
+                <div class="row">
+                    <div class="col text-truncate text-bg-primary text-center">
+                        <a href="{{ federation_profile.get_absolute_url }}" class="text-reset text-decoration-none">
+                            View
+                        </a>
+                    </div>
+                    <div class="col text-truncate text-bg-primary text-center">
+                        <a href="" class="text-reset text-decoration-none">
+                            Share
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+
+    </ul>
+
+</div>
+<!-- /.container -->
+
+
+{% endblock %}
+

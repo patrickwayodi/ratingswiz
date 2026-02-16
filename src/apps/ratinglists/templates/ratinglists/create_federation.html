@@ -1,0 +1,43 @@
+{% extends "ratinglists/base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+    <div class="col-md-12 py-5">
+        <!-- Title -->
+        <h1 class="mt-3">Create a Federation</h1>
+    </div>
+
+    <div id="create-video-request-form" class="col-md-12 py-3">
+
+        <form method="post" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {{ form|crispy }}
+
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <input class="btn btn-primary w-100 py-2 mt-3" type="submit" value="Create Federation"/>
+                </div>
+                <div class="col-3"></div>
+            </div>
+
+        <form>
+
+    </div>
+
+    <br />
+    <br />
+
+</div>
+<!-- End of Page Content -->
+
+
+{% endblock %}
+

@@ -1,0 +1,126 @@
+{% extends "ratinglists/base.html" %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+    <h1 class="mt-4 pb-4">Region Profile</h1>
+
+    <h2 class="mt-4 pb-4">{{ name|capfirst }}</h2>
+
+    <div>
+        <a href="{% url 'region_detail_csv' name='afrca' %}">Spreadsheet (CSV Format)</a>
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <div id="plot">
+        <img src="{{ chart }}"/>
+    </div>
+
+    <br />
+    <br />
+
+
+    <table border="1">
+        <th>
+            <td class="p-1">2013</td>
+            <td class="p-1">2014</td>
+            <td class="p-1">2015</td>
+            <td class="p-1">2016</td>
+            <td class="p-1">2017</td>
+            <td class="p-1">2018</td>
+            <td class="p-1">2019</td>
+            <td class="p-1">2020</td>
+            <td class="p-1">2021</td>
+            <td class="p-1">2022</td>
+            <td class="p-1">2023</td>
+            <td class="p-1">2024</td>
+            <td class="p-1">2025</td>
+            <td class="p-1">2026</td>
+        </th>
+        {% for fed in region %}
+        <tr>
+            <td class="p-1">{{ fed.0 }}</td>
+            <td class="p-1">{{ fed.1 }}</td>
+            <td class="p-1">{{ fed.2 }}</td>
+            <td class="p-1">{{ fed.3 }}</td>
+            <td class="p-1">{{ fed.4 }}</td>
+            <td class="p-1">{{ fed.5 }}</td>
+            <td class="p-1">{{ fed.6 }}</td>
+            <td class="p-1">{{ fed.7 }}</td>
+            <td class="p-1">{{ fed.8 }}</td>
+            <td class="p-1">{{ fed.9 }}</td>
+            <td class="p-1">{{ fed.10 }}</td>
+            <td class="p-1">{{ fed.11 }}</td>
+            <td class="p-1">{{ fed.12 }}</td>
+            <td class="p-1">{{ fed.13 }}</td>
+            <td class="p-1">{{ fed.14 }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br />
+    <br />
+
+    <ul class="list-group list-group">
+        <li class="list-group-item list-group-item-light">
+            <div class="text-wrap text-break">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col"><b>2013</b></div>
+                    <div class="col"><b>2014</b></div>
+                    <div class="col"><b>2015</b></div>
+                    <div class="col"><b>2013</b></div>
+                    <div class="col"><b>2013</b></div>
+                    <div class="col"><b>2013</b></div>
+                    <div class="col"><b>2013</b></div>
+                    <div class="col"><b>2013</b></div>
+                    <div class="col"><b>2013</b></div>
+                    <div class="col"><b>2013</b></div>
+                    <div class="col"><b>2013</b></div>
+                    <div class="col"><b>2024</b></div>
+                    <div class="col"><b>2025</b></div>
+                    <div class="col"><b>2026</b></div>
+                </div>
+            </div>
+        </li>
+        {% for fed in region %}
+        <li class="list-group-item list-group-item-light">
+            <div class="text-wrap text-break">
+                <div class="row">
+                    <div class="col text-truncate">
+                        <b>{{ fed.0 }}</b>
+                    </div>
+                    <div class="col">{{ fed.1 }}</div>
+                    <div class="col">{{ fed.2 }}</div>
+                    <div class="col">{{ fed.3 }}</div>
+                    <div class="col">{{ fed.4 }}</div>
+                    <div class="col">{{ fed.5 }}</div>
+                    <div class="col">{{ fed.6 }}</div>
+                    <div class="col">{{ fed.7 }}</div>
+                    <div class="col">{{ fed.8 }}</div>
+                    <div class="col">{{ fed.9 }}</div>
+                    <div class="col">{{ fed.10 }}</div>
+                    <div class="col">{{ fed.11 }}</div>
+                    <div class="col">{{ fed.12 }}</div>
+                    <div class="col">{{ fed.13 }}</div>
+                    <div class="col">{{ fed.14 }}</div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <br />
+    <br />
+</div>
+<!-- /.container -->
+
+
+{% endblock %}
+
